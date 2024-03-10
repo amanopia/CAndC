@@ -1,1 +1,17 @@
-sample file
+1. React is made of react and react-dom
+2. We can use a budler that combines all the js files into 1, which also does the work
+
+3. npx - When we want to execute a pkg directly, we use npx
+4. cra is a utility
+5. start script is used to run the application in development
+6. build is used to run the application in production
+7. test script runs tests using jest (default) or mocha if specified
+8. eject removes create-react-app from our project 
+9. Always use npm run start, run build, because there is an exception in start
+10. dev dependencies don't go into prod, they are only used for dev
+
+11. React is a core foundational library that takes all the references ReactDOM is an implementation of the library on web
+
+12. React syntax has functions returning HTML and it being rendered  by react
+
+13. React creates its own DOM, there is only one page being rendeered at root
