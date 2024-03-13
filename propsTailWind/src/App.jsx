@@ -1,9 +1,7 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-
 // Card Component
 import Card from "./components/Card";
+// Counter component
+import Counter from "./components/Counter";
 function App() {
   const imgArray = [
     {
@@ -36,6 +34,8 @@ function App() {
         userName={imgArray[1].userName}
         src={imgArray[1].src}
         alt={imgArray[1].alt}></Card>
+
+      <Counter></Counter>
     </>
   );
 }
