@@ -55,33 +55,19 @@ const InputBox = ({
           }}
           disabled={currencyDisabled}>
           {currencies.map((cu) => (
-            <option key={cu} style={{ color: "black" }} value={cu}>
-              {cu}
+            <option
+              onClick={(e) => console.log(e.target.value)}
+              key={cu.code}
+              style={{ color: "black" }}
+              value={cu.code}>
+              {cu.code}
             </option>
           ))}
         </select>
-        {/* <Select>
-          <SelectTrigger className="bg-primary text-primary-foreground">
-            <SelectValue placeholder="Choose Country" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup
-              onChange={(event) => console.log(event.target.value)}
-              className="bg-primary text-primary-foreground">
-              {currencies.map((cu) => (
-                <SelectItem
-                  onChange={(event) => {
-                    console.log(event.target.value);
-                  }}
-                  key={cu}
-                  value={cu}>
-                  {cu}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select> */}
       </div>
+      {/* {currencies.map((cu) => (
+        <img src={cu.flag} alt={cu.code} />
+      ))} */}
     </div>
   );
 };
