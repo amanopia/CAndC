@@ -1,0 +1,42 @@
+.inputs {
+  width: 30vw;
+  height: 20vh;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-right select {
+  padding: 0.5rem 0.6rem;
+}
+
+.input {
+  color: rgb(255, 255, 255);
+  background: #000;
+  border-radius: 10px;
+  font-family: "Montserrat", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.5rem 0.6rem;
+}
+
+button.background-black {
+  background: #000000;
+  height: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: 10px;
+}
