@@ -17,11 +17,17 @@ function App() {
   // For now, using the currency to render the list
   // currency object will contain all the live currency rates
   const currencyObj = useCurrencyInfo(from);
+  console.log(currencyObj);
 
   //! Limiting the number of currencies since currencyObj contains a lot of crypto currencies as well
   const currencyCodesArray = [];
   currencyFlagData.forEach((element) => {
-    const newObj = { code: element.code.toLowerCase(), flag: element.flag };
+    const newObj = {
+      value: element.code.toLowerCase(),
+      label: element.code.toLowerCase(),
+      flag: element.flag,
+      color: "green",
+    };
     currencyCodesArray.push(newObj);
   });
 
@@ -29,6 +35,7 @@ function App() {
 
   function convertCurrencyHandler() {
     let result = amount * currencyObj[to];
+    console.log(result);
     setConvertedAmount(result);
   }
   function swappingHandler() {
@@ -84,7 +91,6 @@ function App() {
       <button className="btn-convert" onClick={swappingHandler}>
         Swap
       </button>
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAG5SURBVHja7JdLihRBEEBfVqUU6rQNggiCFxA8gswFRNy49gAeQdx4G8HbuHDvRkRUnKxPZ2dGhous6Y9TtavPZmITtYggXsWPSKOqrCkFK8stgAFKoOr1kiKAt8CD76/f/KYYj//u7bPpU28Mn199eGiBLabg7uWLUePLp08mB/j66xvA1gKVSkK9J/29guuxNCZrVX60905qZlD0xvd5XbPvmN22uo+XCFDZXI2Idjt0txuk9TFM+ve7Yk9MAkAPIKSuI3XdoEMX/aQAd4qSfYpHAI0RbVt0FGA/KYAtyvMMaBTUObRpBh2a0E3cgspewkkJQkDqGm3bQfNPL9/PtIQ+cmjC5OqbTaj9qppRcglCAFej3h9H8P9xnBUgCtRNBllYDj0QmxbWAkgxggiktFjg60PosAeMJnQtAIkRq7poBlIfK5cgRBQdzYC1dtLgVVVRluUJgEQo7XH0RminlBDCKUDK99AIwByXs4gcb0JJafaFc7aCjTlktQBIqpiVAPIYas5AcXEx6LCRzaxjKAn4465GjZ1zs13GBngMPAceLbyFfwJfTP8m2PR6SfGAM7eP07UB/g0Aw73uXdMbeJMAAAAASUVORK5CYII="></img>
     </form>
   );
 }
