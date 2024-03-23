@@ -1,16 +1,17 @@
 import React from "react";
-import { useState, useId } from "react";
+import { useState, useId, useRef } from "react";
 import "./InputBox.css";
+import Select from "react-select";
 
 // Shadcn
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-  SelectGroup,
-} from "@/components/ui/select";
+// import {
+//   Select,
+//   SelectContent,
+//   SelectItem,
+//   SelectTrigger,
+//   SelectValue,
+//   SelectGroup,
+// } from "@/components/ui/select";
 
 const InputBox = ({
   label,
@@ -25,6 +26,19 @@ const InputBox = ({
   const amountInputId = useId();
   const currencyInputId = useId();
 
+  const [selectedOption, setSelectedOption] = useState(null);
+  function handleChange(selectedOption) {
+    console.log(selectedOption.value);
+    onCurrencyChange && onCurrencyChange(selectedOption.value);
+  }
+  const colorStyles = {
+    control: (styles) => ({
+      ...styles,
+    }),
+    option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+      return { ...styles, color: "#fff", backgroundColor: "black" };
+    },
+  };
   return (
     <div className="inputs">
       <div className="content-left">
@@ -45,8 +59,8 @@ const InputBox = ({
       </div>
 
       <div className="content-right">
-        <label htmlFor={currencyInputId}>Choose currency </label>
-        <select
+        {/* <label htmlFor={currencyInputId}>Choose currency </label> */}
+        {/* <select
           style={{ color: "blue" }}
           value={currencyType}
           id={currencyInputId}
@@ -55,35 +69,51 @@ const InputBox = ({
           }}
           disabled={currencyDisabled}>
           {currencies.map((cu) => (
-            <option key={cu} style={{ color: "black" }} value={cu}>
-              {cu}
+            <option
+              onClick={(e) => console.log(e.target.value)}
+              key={cu.code}
+              style={{ color: "black" }}
+              value={cu.code}>
+              {cu.code}
             </option>
           ))}
-        </select>
-        {/* <Select>
-          <SelectTrigger className="bg-primary text-primary-foreground">
-            <SelectValue placeholder="Choose Country" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup
-              onChange={(event) => console.log(event.target.value)}
-              className="bg-primary text-primary-foreground">
-              {currencies.map((cu) => (
-                <SelectItem
-                  onChange={(event) => {
-                    console.log(event.target.value);
-                  }}
-                  key={cu}
-                  value={cu}>
-                  {cu}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select> */}
+        </select> */}
+
+        <Select
+          className="cl-dropdown"
+          id={currencyInputId}
+          onChange={handleChange}
+          options={currencies}
+          defaultInputValue={currencyType}
+          formatOptionLabel={(element) => (
+            <div className="dropdown-options">
+              <img src={element.flag} alt={element.value} />
+              <span>{element.label}</span>
+            </div>
+          )}
+          styles={colorStyles}></Select>
+        {/* Here */}
+        {/* <div className="currencies">
+          {currencies.map((cu) => (
+            <div
+              onClick={(e) => console.log(e.target.value)}
+              onKeyDown={() => null}
+              key={cu.code}
+              style={{ color: "black" }}
+              value={cu.code}>
+              <p>{cu.code}</p>
+              <img src={cu.flag} alt={cu.code} />
+            </div>
+          ))}
+        </div> */}
       </div>
+      {/* {currencies.map((cu) => (
+        <img src={cu.flag} alt={cu.code} />
+      ))} */}
     </div>
   );
 };
 
 export default InputBox;
+
+// add change functionality on div

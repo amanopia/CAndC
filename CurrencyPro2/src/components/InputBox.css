@@ -1,5 +1,5 @@
 .inputs {
-  width: 30vw;
+  width: 80vw;
   height: 20vh;
 
   border: 1px solid #ffffff;
@@ -39,4 +39,25 @@ button.background-black {
   height: 100%;
   padding: 0.5rem 0.6rem;
   border-radius: 10px;
+}
+
+.currencies {
+  width: 100%;
+  background: #fff;
+  max-height: 10rem;
+  overflow-y: scroll;
+}
+
+.cl-dropdown {
+  width: 40vw;
+  /* height: 4rem; */
+}
+
+.dropdown-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.3rem 1rem;
+  font-family: "Poppins";
 }
