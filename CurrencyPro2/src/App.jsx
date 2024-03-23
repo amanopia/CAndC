@@ -1,43 +1,49 @@
 import "./App.css";
-import { InputBox } from "./components";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { InputBox, Navigation } from "./components";
+import { useState, useEffect } from "react";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
-
 import currencyFlagData from "./components/currencyFlagData";
 
 function App() {
-  const [currencyData, setCurrencyData] = useState({});
-
   const [amount, setAmount] = useState(0);
   const [convertedAmount, setConvertedAmount] = useState(0);
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
 
-  // For now, using the currency to render the list
   // currency object will contain all the live currency rates
   const currencyObj = useCurrencyInfo(from);
-  console.log(currencyObj);
 
-  //! Limiting the number of currencies since currencyObj contains a lot of crypto currencies as well
+  // On the change of currency, new data will come into the currency object
+  // When the currency object gets updated, the amount will change simultaneously
+  useEffect(() => {
+    amountChangeHandler(amount);
+  }, [currencyObj]);
+
+  // Limiting the number of currencies since 'currencyObj' contains crypto currencies as well
   const currencyCodesArray = [];
   currencyFlagData.forEach((element) => {
     const newObj = {
       value: element.code.toLowerCase(),
       label: element.code.toLowerCase(),
       flag: element.flag,
-      color: "green",
     };
     currencyCodesArray.push(newObj);
   });
 
+  // Triggers the calling of new data since currency is present as a dependency in the useCurrencyInfo hook
+  function currencyChangeHandler(currency) {
+    setFrom(currency);
+  }
+  // creating a currencies array that will contain all the currency information
   const currencies = currencyCodesArray;
 
+  // This function is connected to the button
   function convertCurrencyHandler() {
     let result = amount * currencyObj[to];
-    console.log(result);
-    setConvertedAmount(result);
+    setConvertedAmount(result.toFixed(2));
   }
+
+  // This function manages the swapping of values
   function swappingHandler() {
     setFrom(to);
     setTo(from);
@@ -45,13 +51,11 @@ function App() {
     setAmount(convertedAmount);
   }
 
-  function currencyChangeHandler(currency) {
-    setFrom(currency);
-  }
-
-  //! This function sets amount value on increment and decrement, that is required for conversion to another amount
+  // This function sets amount value on increment and decrement, that is required for conversion to another amount
   function amountChangeHandler(amount) {
     setAmount(amount);
+    let result = amount * currencyObj[to];
+    setConvertedAmount(result.toFixed(2));
   }
 
   return (
@@ -60,13 +64,7 @@ function App() {
         e.preventDefault();
       }}
       className="">
-      <nav className="navigation">
-        <ul>
-          <li>About</li>
-          <li>Contact Me</li>
-          <li>LinkedIn</li>
-        </ul>
-      </nav>
+      <Navigation></Navigation>
       <InputBox
         label={"from"}
         amount={amount}
@@ -96,4 +94,3 @@ function App() {
 }
 
 export default App;
-//  https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json

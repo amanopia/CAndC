@@ -84,6 +84,7 @@ const InputBox = ({
           id={currencyInputId}
           onChange={handleChange}
           options={currencies}
+          defaultInputValue={currencyType}
           formatOptionLabel={(element) => (
             <div className="dropdown-options">
               <img src={element.flag} alt={element.value} />
