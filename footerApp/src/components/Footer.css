@@ -1,0 +1,46 @@
+.footerContainer {
+  height: 23rem;
+  width: 50rem;
+  border-radius: 30px;
+  background: #000;
+  color: var(--color-inactive);
+  padding: 0.5rem 2rem 2rem;
+}
+
+.footerNav {
+  display: flex;
+  margin: 0 auto;
+  gap: 2.5rem;
+  font-size: 0.7rem;
+  padding: 1rem 2rem;
+  width: min-content;
+
+  border-radius: 50px;
+  background: var(--color-highlight);
+}
+
+.footerContainer > div:first-child {
+  position: relative;
+}
+
+/* Lower content */
+
+.contactContent {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.contactContent div:first-child h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+.socialMedia {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.socialMedia a {
+  color: var(--color-active);
+}
