@@ -1,46 +1,116 @@
 .footerContainer {
-  height: 23rem;
+  height: 40%;
   width: 50rem;
   border-radius: 30px;
   background: #000;
-  color: var(--color-inactive);
-  padding: 0.5rem 2rem 2rem;
+  padding: 0.7rem 4rem 4rem;
 }
 
 .footerNav {
   display: flex;
-  margin: 0 auto;
-  gap: 2.5rem;
-  font-size: 0.7rem;
-  padding: 1rem 2rem;
-  width: min-content;
-
-  border-radius: 50px;
+  gap: 2rem;
+  color: var(--color-inactive);
   background: var(--color-highlight);
-}
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
 
-.footerContainer > div:first-child {
-  position: relative;
+  width: min-content;
+  border-radius: 50px;
+  margin: 0 auto;
+  font-weight: 500;
 }
-
-/* Lower content */
 
 .contactContent {
-  height: inherit;
   display: flex;
   flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+  margin-top: 5rem;
+  height: 15rem;
+  transition: all 0.4s ease;
 }
 
-.contactContent div:first-child h1 {
-  font-weight: 500;
+.contactContentLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.contactContentLeft h1 {
   font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-active);
+}
+
+.contactContentLeft p {
+  font-size: 1.1rem;
+  color: var(--color-inactive);
+  font-weight: 500;
+}
+
+.contactContentLeft p:last-child {
+  font-size: 0.8rem;
+}
+
+/* CONTENT RIGHT */
+.contactContentRight {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactContentRight .inputContainer {
+  width: 80%;
+  height: 8rem;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  /* background: linear-gradient(
+    90deg,
+    var(--color-unedited),
+    var(--color-unedited),
+    #002b5c,
+    #000
+  ); */
+
+  border: 0.2rem solid var(--color-unedited);
+}
+
+input[type="email"] {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: large;
+  font-family: "Poppins";
+  caret-color: greenyellow;
+}
+input::placeholder {
+  color: #fff;
+}
+
+.inputContainer button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-family: "Poppins";
+  font-size: medium;
 }
 
 .socialMedia {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
+  margin-top: 3rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
+
 .socialMedia a {
-  color: var(--color-active);
+  place-self: center;
+  color: #fff;
 }

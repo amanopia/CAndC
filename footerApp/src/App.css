@@ -8,11 +8,11 @@
 }
 
 :root {
-  --color-inactive: #848484;
+  --color-inactive: #707070;
   --color-active: #fff;
   --color-highlight: #212121;
   --color-unedited: #2478d7;
-  --color-valid: rgb(88, 239, 13);
+  --color-valid: #58ef0d;
   --color-invalid: #c41010;
 }
 
