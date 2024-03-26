@@ -8,21 +8,7 @@ import { useEffect, useState, useRef } from "react";
 const Footer = () => {
   const [emailValue, setEmailValue] = useState("");
 
-  const inpRef = useRef();
-
   const inputRef = useRef();
-  useEffect(() => {
-    if (emailValue == "") {
-      inputRef.current.style.background = linearGradientUnedited;
-      inputRef.current.style.borderColor = "#2478d7";
-    } else if (isEmail(emailValue)) {
-      inputRef.current.style.background = linearGradientValid;
-      inputRef.current.style.borderColor = "#58ef0d";
-    } else {
-      inputRef.current.style.background = linearGradientInvalid;
-      inputRef.current.style.borderColor = "#c41010";
-    }
-  }, [emailValue]);
 
   //? LINEAER GRADIENTS
   const linearGradientUnedited =
@@ -35,6 +21,20 @@ const Footer = () => {
   function inputChangeHandler(value) {
     setEmailValue(value);
   }
+
+  useEffect(() => {
+    inputRef.current.style.transition = "all 0.4s ease";
+    if (emailValue == "") {
+      inputRef.current.style.background = linearGradientUnedited;
+      inputRef.current.style.borderColor = "#2478d7";
+    } else if (isEmail(emailValue)) {
+      inputRef.current.style.background = linearGradientValid;
+      inputRef.current.style.borderColor = "#58ef0d";
+    } else {
+      inputRef.current.style.background = linearGradientInvalid;
+      inputRef.current.style.borderColor = "#c41010";
+    }
+  }, [emailValue]);
 
   return (
     <div className="footerContainer">
@@ -56,18 +56,12 @@ const Footer = () => {
           <p>Based in Netherlands</p>
         </div>
         <div className="contactContentRight">
-          <div
-            ref={inputRef}
-            className="inputContainer"
-            style={{
-              background: linearGradientUnedited,
-            }}>
+          <div ref={inputRef} className="inputContainer">
             <input
               type="email"
               name=""
               id="emailField"
               placeholder="email"
-              ref={inpRef}
               value={emailValue}
               onChange={(event) => inputChangeHandler(event.target.value)}
             />

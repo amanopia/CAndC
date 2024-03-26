@@ -20,20 +20,10 @@
   font-weight: 500;
 }
 
-.contactContent {
-  display: flex;
-  flex-direction: row;
-  gap: 5rem;
-  align-items: center;
-  margin-top: 5rem;
-  height: 15rem;
-  transition: all 0.4s ease;
-}
-
 .contactContentLeft {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100%;
 }
 .contactContentLeft h1 {
@@ -88,6 +78,7 @@ input[type="email"] {
   font-size: large;
   font-family: "Poppins";
   caret-color: greenyellow;
+  outline: none;
 }
 input::placeholder {
   color: #fff;
@@ -113,4 +104,24 @@ input::placeholder {
 .socialMedia a {
   place-self: center;
   color: #fff;
+}
+
+.contactContent {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+  align-items: center;
+  margin-top: 5rem;
+  height: 15rem;
+  transition: all 0.4s ease;
+}
+.grad-un {
+  background: linear-gradient(90deg, #2478d7, #2478d7, #002b5c, #000);
+}
+
+.grad-val {
+  background: linear-gradient(90deg, #58ef0d, #58ef0d, #2a7f00, #000);
+}
+.grad-inv {
+  background: linear-gradient(90deg, #c41010, #c41010, #7a0000, #000);
 }
