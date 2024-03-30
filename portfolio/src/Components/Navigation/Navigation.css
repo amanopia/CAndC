@@ -1,0 +1,12 @@
+nav ul {
+  font-size: 0.7rem;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    align-items: flex-start;
+    justify-content: start;
+  }
+}
