@@ -1,10 +1,11 @@
 import React from "react";
-import abs from "../assets/abstract.png";
-import myImg from "../assets/my_img1.png";
-import social from "../assets/social-media.png";
-import videoC from "../assets/vc.png";
-import chat from "../assets/chat.png";
+import abs from "../../assets/abstract.png";
+import myImg from "../../assets/my_img1.png";
+import social from "../../assets/social-media.png";
+import videoC from "../../assets/vc.png";
+import chat from "../../assets/chat.png";
 import "./Header.css";
+
 const Header = () => {
   return (
     <div className="">
@@ -14,7 +15,7 @@ const Header = () => {
         alt="Abstract"
       />
       {/* OUTER BOX FOR PADDING AND MARGIN*/}
-      <div className="relative items-center m-auto h-80">
+      <div className="relative items-center m-auto h-80 sm:h-56 md:h-36 lg:h-32">
         {/* INNER BOX CONTAINING ALL THE COTENTS SHIFTED TO TOP-16 */}
         <div
           className="absolute -top-16 left-0 right-0 m-auto text-center flex flex-col items-center 
@@ -31,12 +32,12 @@ const Header = () => {
                 Aman Verma
               </h1>
               <p className="text-sm my-2 font-light text-slate-400 md:text-xs xl:text-base">
-                I am a Full Stack Developer based in Delhi.
+                I am a Full Stack Developer based in Delhi
               </p>
               <img
                 src={social}
                 alt="tick"
-                className="h-10 absolute -top-20 right-20 sm:top-16 sm:-left-24 md:top-12 md:-left-16 xl:h-12"></img>
+                className="h-10 absolute -top-24 right-20 sm:top-16 sm:-left-16 md:top-12 md:-left-16 xl:h-12"></img>
             </div>
           </div>
           {/* CONTENT RIGHT */}
