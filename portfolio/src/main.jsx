@@ -15,6 +15,7 @@ import { About, Technologies, Projects, Experience } from "./index.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout></Layout>}>
+      <Route path="" element={<About></About>}></Route>
       <Route path="/about" element={<About></About>}></Route>
       <Route
         path="/technologies"
