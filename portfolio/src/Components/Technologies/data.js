@@ -12,7 +12,8 @@ import javas from "../../assets/javascript.png";
 import html from "../../assets/html.png";
 import css from "../../assets/css.png";
 import exp from "../../assets/express.png";
-
+import gqlImage from "../../assets/gql.png";
+import restApi from "../../assets/restApi.png";
 // Frontend Development Skills
 const frontendSkills = [
   {
@@ -109,4 +110,9 @@ const otherSkills = [
   },
 ];
 
-export { frontendSkills, backendSkills, otherSkills };
+const apiStandards = [
+  { img: gqlImage, toolName: "GraphQL", toolSite: "", alias: "GrpahQL Docs" },
+  { img: restApi, toolName: "Rest API", toolSite: "", alias: "" },
+];
+
+export { frontendSkills, backendSkills, otherSkills, apiStandards };

@@ -57,7 +57,7 @@ client
   .then((res) => console.log(res));
 
 import Layout from "./Layout.jsx";
-import { About, Technologies, Projects, Experience } from "./index.js";
+import { About, Technologies, Blogs, Experience } from "./index.js";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout></Layout>}>
@@ -66,7 +66,7 @@ const router = createBrowserRouter(
       <Route
         path="/technologies"
         element={<Technologies></Technologies>}></Route>
-      <Route path="/projects" element={<Projects></Projects>}></Route>
+      <Route path="/blogs" element={<Blogs></Blogs>}></Route>
       <Route path="/experience" element={<Experience></Experience>}></Route>
     </Route>
   )

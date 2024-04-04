@@ -9,8 +9,8 @@ const Experience = () => {
   return (
     <div className="px-8">
       {/* COMPANY 1 */}
-      <div>
-        <div className="container w-80 border-2 p-4 rounded-2xl mb-8 ">
+      <div className="flex flex-col items-stretch">
+        <div className="container w-80 border-2 p-4 rounded-2xl mb-8 ml-0 ">
           {/* CONTAINS LOGO AND WORK PROFILE */}
           <div className="flex gap-4 items-center">
             <img src={civ} alt="logo1" className="h-12 rounded-full" />
@@ -43,7 +43,7 @@ const Experience = () => {
       </div>
       {/* COMPANY 2 */}
       <div>
-        <div className="container w-80 border-2 p-4 rounded-2xl mt-10 mb-8">
+        <div className="container w-80 border-2 p-4 rounded-2xl mt-10 mb-8 ml-0">
           {/* CONTAINS LOGO AND WORK PROFILE */}
           <div className="flex gap-2 items-center">
             <img

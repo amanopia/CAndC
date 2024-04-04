@@ -42,7 +42,7 @@ const Navigation = () => {
         </li>
         <li>
           <NavLink
-            to="/projects"
+            to="/blogs"
             className={({ isActive }) =>
               `transition-all ${
                 isActive
@@ -51,7 +51,7 @@ const Navigation = () => {
               }`
             }
             onClick={setFalse}>
-            Projects
+            Blogs
           </NavLink>
         </li>
         <li>

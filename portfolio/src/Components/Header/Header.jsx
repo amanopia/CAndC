@@ -6,6 +6,8 @@ import videoC from "../../assets/vc.png";
 import chat from "../../assets/chat.png";
 import "./Header.css";
 
+import AlertDialogComponent from "./AlertDialogComponent.jsx";
+
 const Header = () => {
   return (
     <div className="">
@@ -46,10 +48,8 @@ const Header = () => {
               <img src={videoC} alt="video call" className="h-4 " />
               Video call
             </button>
-            <button className="text-sm my-2 md:text-xs flex items-center gap-x-2 bg-black px-4 py-2 text-white rounded-md hover:invert border-2 transition-all border-white">
-              <img src={chat} alt="message" className="h-4" />
-              Message
-            </button>
+            {/* HERE WE WILL ADD A ALERT DIALOG */}
+            <AlertDialogComponent image={chat}></AlertDialogComponent>
           </div>
         </div>
       </div>
