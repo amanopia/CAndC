@@ -90,8 +90,10 @@ function DisplayData() {
 }
 const Blogs = () => {
   return (
-    <div className="p-8 gap-2 xl:flex xl:flex-row 2xl:flex-row">
-      <DisplayData></DisplayData>
+    <div className="p-8">
+      <div className="gap-2 xl:flex xl:flex-row 2xl:flex-row">
+        <DisplayData></DisplayData>
+      </div>
       <button className="text-slate-400 text-xs md:text-sm xl:text-base mt-10 border-dotted p-2 border-4 hover:text-black hover:border-black transition-all">
         More blogs coming soon
       </button>
