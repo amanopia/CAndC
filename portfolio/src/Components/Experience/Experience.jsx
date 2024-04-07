@@ -15,20 +15,20 @@ const Experience = () => {
           <div className="flex gap-4 items-center">
             <img src={civ} alt="logo1" className="h-12 rounded-full lg:h-14" />
             <div className="flex flex-col">
-              <p className="font-semibold lg:text-lg xl:text-xl">
+              <p className="font-semibold lg:text-base xl:text-lg">
                 Graduate Trainee
               </p>
-              <a className="font-semibold text-sm text-slate-400 lg:text-base xl:text-lg">
+              <a className="font-semibold text-sm text-slate-400 xl:text-base 2xl:text-lg">
                 Civica
               </a>
             </div>
           </div>
-          <p className="mt-4 text-xs text-slate-400 lg:text-sm">
+          <p className="mt-4 text-xs text-slate-400 xl:text-sm 2xl:text-base">
             April 2023 - July 2023
           </p>
         </div>
         {/* Company 1 DESCRIPTION */}
-        <ul className="text-sm flex flex-col gap-3 ml-5 list-disc lg:text-base xl:text-xl">
+        <ul className="text-sm flex flex-col gap-3 ml-5 list-disc xl:text-base 2xl:text-lg">
           <li>
             Developed feature-rich CRUD applications using ASP.NET in
             conjunction with Entity Framework and dependency injection, that
@@ -58,18 +58,20 @@ const Experience = () => {
               className="h-12 w-12 object-cover rounded-full lg:h-14 lg:w-14"
             />
             <div className="flex flex-col">
-              <p className="font-semibold lg:text-lg xl:text-xl">QA Trainee</p>
-              <a className="font-semibold text-sm text-slate-400 lg:text-base xl:text-lg">
+              <p className="font-semibold lg:text-base xl:text-lg">
+                QA Trainee
+              </p>
+              <a className="font-semibold text-sm text-slate-400 xl:text-base 2xl:text-lg">
                 DXC Technology
               </a>
             </div>
           </div>
-          <p className="mt-4 text-xs text-slate-400 lg:text-sm">
+          <p className="mt-4 text-xs text-slate-400 xl:text-sm 2xl:text-base">
             June 2022 - July 2022
           </p>
         </div>
         {/* Company 1 DESCRIPTION */}
-        <ul className="text-sm flex flex-col gap-3 ml-5 list-disc lg:text-base xl:text-xl">
+        <ul className="text-sm flex flex-col gap-3 ml-5 list-disc xl:text-base 2xl:text-lg">
           <li>
             Performed tests to check the functionality of different components
             of web applications using tools such as Selenium and Cucumber

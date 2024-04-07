@@ -25,17 +25,17 @@ const Header = () => {
           {/* CONTENT LEFT */}
           <div className="flex flex-col items-center sm:flex-row sm:gap-x-6">
             <img
-              className="object-cover w-min rounded-full border-4 border-white h-40 md:h-32 lg:h-48  lg:border-8 xl:h-56 "
+              className="object-cover w-min rounded-full border-4 border-white h-40 md:h-32 lg:h-48  lg:border-8 2xl:h-56 "
               src={myImg}
               alt="pfp"
             />
             <div className="relative my-12 sm:text-left">
-              <h1 className="text-2xl font-semibold md:text-xl lg:text-4xl xl:text-5xl">
+              <h1 className="text-2xl font-semibold md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
                 Aman Verma
               </h1>
               <p
                 className="text-sm my-2 font-light text-slate-400 md:text-xs
-              lg:text-base xl:text-lg">
+              lg:text-base 2xl:text-lg">
                 I am a Full Stack Developer based in Delhi
               </p>
               <img
@@ -47,11 +47,11 @@ const Header = () => {
           </div>
           {/* CONTENT RIGHT */}
           <div className="right-10 flex gap-x-6 sm:mx-4">
-            <button className="text-sm my-2 md:text-xs flex items-center gap-x-2 border-2 px-4 py-2 rounded-md bg-white hover:invert transition-all lg:text-base xl:text-lg">
+            <button className="text-sm my-2 md:text-xs flex items-center gap-x-2 border-2 px-4 py-2 rounded-md bg-white hover:invert transition-all  lg:text-sm 2xl:text-lg">
               <img
                 src={videoC}
                 alt="video call"
-                className="h-4 lg:h-5 xl:h-6"
+                className="h-4 lg:h-5 2xl:h-6"
               />
               Video call
             </button>

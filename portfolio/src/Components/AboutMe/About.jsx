@@ -7,9 +7,9 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div className="px-8 text-sm flex flex-col md:flex-row md:justify-between md:items-start lg:text-base xl:text-xl">
+    <div className="px-8 text-sm flex flex-col md:flex-row md:justify-between md:items-start xl:text-base 2xl:text-lg">
       {/* MY DESCRIPTION */}
-      <div className="about-content md:w-96 ">
+      <div className="about-content md:w-96 dark:hidden">
         I am a Full Stack Developer based in Delhi, India. They say creativity
         meets logic in the world of development, and that's where I thrive. As a
         Full Stack Developer, I'm fluent in the language of the MERN stack
@@ -40,7 +40,7 @@ const About = () => {
           <p className="text-slate-400 font-semibold text-xs lg:text-base">
             Location
           </p>
-          <p className="font-semibold text-sm flex items-center gap-2 mt-1 lg:text-lg">
+          <p className="font-semibold text-sm flex items-center gap-2 mt-1 lg:text-base 2xl:text-lg">
             <img
               src={flag}
               alt="flag"
@@ -58,7 +58,7 @@ const About = () => {
           <a
             href="https://www.linkedin.com/in/aman-verma-82b823185/"
             target="_blank"
-            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-lg">
+            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-base 2xl:text-lg">
             Aman Verma <img src={hy} alt="" className={`h-4`} />
           </a>
         </div>
@@ -71,7 +71,7 @@ const About = () => {
           <a
             href="https://twitter.com/volvidem"
             target="_blank"
-            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-lg">
+            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-base 2xl:text-lg">
             @volvidem <img src={hy} alt="" className={`h-4`} />
           </a>
         </div>
@@ -84,7 +84,7 @@ const About = () => {
           <a
             href="https://devaman.hashnode.dev/"
             target="_blank"
-            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-lg">
+            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-base 2xl:text-lg">
             @thegooddev <img src={hy} alt="" className={`h-4`} />
           </a>
         </div>
