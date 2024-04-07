@@ -54,13 +54,13 @@ const AlertDialogComponent = ({ image }) => {
   return (
     <AlertDialog open={isOpen} onOpenChange={setIsOpen}>
       <AlertDialogTrigger asChild>
-        <button className="text-sm my-2 md:text-xs flex items-center gap-x-2 bg-black px-4 py-2 text-white rounded-md hover:invert border-2 transition-all border-white">
-          <img src={image} alt="message" className="h-4" />
+        <button className="text-sm my-2 md:text-xs flex items-center gap-x-2 bg-black px-4 py-2 text-white rounded-md hover:invert border-2 transition-all border-white lg:text-base xl:text-lg">
+          <img src={image} alt="message" className="h-4 lg:h-5 xl:h-6" />
           Message
         </button>
       </AlertDialogTrigger>
       <AlertDialogContent>
-        <AlertDialogHeader className="text-5xl font-semibold">
+        <AlertDialogHeader className="text-2xl md:text-3xl lg:text-5xl font-semibold">
           Hiring for the team?
         </AlertDialogHeader>
         <AlertDialogDescription className="text-lg mb-5">

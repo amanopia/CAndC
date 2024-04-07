@@ -12,7 +12,7 @@ const Navigation = () => {
 
   return (
     <nav className="p-8">
-      <ul className="flex font-semibold sm:text-sm md:gap-x-8">
+      <ul className="flex font-semibold sm:text-sm md:gap-x-8 lg:text-base xl:text-xl">
         <li>
           <NavLink
             to="/about"

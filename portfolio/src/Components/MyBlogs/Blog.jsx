@@ -58,29 +58,29 @@ function DisplayData() {
         />
         <div className="flex flex-col justify-around">
           <div>
-            <h1 className="mb-3 font-semibold text-lg md:text-2xl lg:text-3xl">
+            <h1 className="mb-3 font-semibold text-lg md:text-2xl lg:text-4xl xl:text-5xl">
               {node.title}
             </h1>
-            <p className="text-slate-400 text-xs md:text-sm lg:text-base">
+            <p className="text-slate-400 text-xs md:text-xs lg:text-lg xl:text-sxl">
               {node.brief}
             </p>
           </div>
 
           {/* read time and views count */}
           <div className="mt-4 flex justify-between">
-            <p className="flex items-center gap-2 text-sm text-slate-400">
+            <p className="flex items-center gap-2 text-sm lg:text-lg text-slate-400">
               <img
                 src={bookGif}
                 alt=""
                 className="h-5
-               icons "
-              />{" "}
+               icons lg:h-7"
+              />
               {node.readTimeInMinutes}
               &nbsp;min
             </p>
 
-            <p className="flex items-center gap-2 text-sm text-slate-400">
-              <img src={eyePng} alt="" className="h-4 icons" />
+            <p className="flex items-center gap-2 text-sm lg:text-lg text-slate-400">
+              <img src={eyePng} alt="" className="h-4 icons lg:h-6" />
               {node.views}
             </p>
           </div>
@@ -91,7 +91,7 @@ function DisplayData() {
 }
 const Blogs = () => {
   return (
-    <div className="p-8">
+    <div className="p-8 xl:flex">
       <DisplayData></DisplayData>
     </div>
   );

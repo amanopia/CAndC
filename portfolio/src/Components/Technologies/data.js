@@ -111,8 +111,18 @@ const otherSkills = [
 ];
 
 const apiStandards = [
-  { img: gqlImage, toolName: "GraphQL", toolSite: "", alias: "GrpahQL Docs" },
-  { img: restApi, toolName: "Rest API", toolSite: "", alias: "" },
+  {
+    img: gqlImage,
+    toolName: "GraphQL",
+    toolSite: "https://graphql.org/",
+    alias: "GrpahQL Docs",
+  },
+  {
+    img: restApi,
+    toolName: "Rest API",
+    toolSite: "https://restfulapi.net/",
+    alias: "REST API Docs",
+  },
 ];
 
 export { frontendSkills, backendSkills, otherSkills, apiStandards };
