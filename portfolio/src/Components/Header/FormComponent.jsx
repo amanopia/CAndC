@@ -1,7 +1,14 @@
 "use client";
-import { useRef, forwardRef } from "react";
+import { useRef, forwardRef, useState } from "react";
 import * as Form from "@radix-ui/react-form";
+import { CircularProgress } from "@mui/material";
+
 const FormComponent = forwardRef(({ sendEmail }, ref) => {
+  const progressRef = useRef();
+
+  const [loading, setLoading] = useState(false);
+  const [query, setQuery] = useState("idle");
+
   return (
     <Form.Root ref={ref} onSubmit={sendEmail}>
       <Form.Field className="mb-7">
@@ -52,10 +59,19 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
       </Form.Field>
       <Form.Submit asChild>
         <button
-          className="p-3 bg-black text-white rounded-md"
+          className="p-3 bg-black text-white rounded-md flex flex-row gap-3 items-center relative hover:bg-slate-600 transition-all"
           style={{ marginTop: 10 }}
-          type="submit">
+          type="submit"
+          onClick={() => {
+            progressRef.current.classList.toggle("hidden");
+          }}>
           Send Message
+          <CircularProgress
+            ref={progressRef}
+            color="error"
+            size="1.5rem"
+            className="block hidden"
+          />
         </button>
       </Form.Submit>
     </Form.Root>

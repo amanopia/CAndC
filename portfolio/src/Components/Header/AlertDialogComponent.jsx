@@ -43,7 +43,8 @@ const AlertDialogComponent = ({ image }) => {
         (error) => {
           <div className="bg-red-400 text-white">
             {toast({
-              title: "Error sending email",
+              variant: "destructive",
+              title: "Error sending message",
               description:
                 "Try again later or go to About section and reach me via linkedin",
             })}
