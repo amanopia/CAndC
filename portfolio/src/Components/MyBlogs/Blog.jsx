@@ -49,7 +49,7 @@ function DisplayData() {
 
   return data.publication.posts.edges.map(({ node }) => (
     <a key={node.id} href={node.url}>
-      <div className="p-3 border-2 rounded-xl mb-5 flex flex-col sm:flex-row sm:items-stretch xl:h-full xl:flex-col xl:gap-12">
+      <div className="p-3 border-2 rounded-xl mb-5 flex flex-col sm:flex-row sm:items-stretch xl:h-full xl:flex-col xl:gap-12 dark:border-slate-500">
         <img
           src={node.coverImage.url}
           alt=""

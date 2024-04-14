@@ -70,7 +70,9 @@ const AlertDialogComponent = ({ image }) => {
         </AlertDialogDescription>
         <FormComponent ref={form} sendEmail={sendEmail}></FormComponent>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel className="dark:border-slate-500">
+            Cancel
+          </AlertDialogCancel>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

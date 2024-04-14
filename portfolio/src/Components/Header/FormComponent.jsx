@@ -11,7 +11,7 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
 
   return (
     <Form.Root ref={ref} onSubmit={sendEmail}>
-      <Form.Field className="mb-7">
+      <Form.Field className="mb-7 ">
         <div className="flex flex-col gap-2">
           <Form.Label className="text-lg font-semibold">Name</Form.Label>
           <Form.Message className="text-red-400" match={"valueMissing"}>
@@ -20,7 +20,9 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
           <Form.Message className="text-red-400" match={"typeMismatch"}>
             Please provide a valid name
           </Form.Message>
-          <Form.Control className="border-4 rounded-md h-12 p-2" asChild>
+          <Form.Control
+            className="border-4 rounded-md h-12 p-2 dark:text-black"
+            asChild>
             <input type="text" name="user_name" required />
           </Form.Control>
         </div>
@@ -35,7 +37,7 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
             Please provide a valid email
           </Form.Message>
           <Form.Control
-            className="border-4 rounded-md h-12 p-2 transition-all"
+            className="border-4 rounded-md h-12 p-2 transition-all dark:text-black"
             asChild>
             <input type="email" name="user_email" required />
           </Form.Control>
@@ -47,7 +49,9 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
           <Form.Message className="text-red-400" match="valueMissing">
             Please enter a message
           </Form.Message>
-          <Form.Control className="border-4 rounded-md h-32 w-full p-2" asChild>
+          <Form.Control
+            className="border-4 rounded-md h-32 w-full p-2 dark:text-black"
+            asChild>
             <textarea
               name="message"
               id=""
@@ -59,8 +63,8 @@ const FormComponent = forwardRef(({ sendEmail }, ref) => {
       </Form.Field>
       <Form.Submit asChild>
         <button
-          className="p-3 bg-black text-white rounded-md flex flex-row gap-3 items-center relative hover:bg-slate-600 transition-all"
-          style={{ marginTop: 10 }}
+          className="p-3 bg-black text-white rounded-md flex flex-row gap-3 items-center relative hover:bg-slate-600 transition-all border-sky-300"
+          style={{ marginTop: 10, border: "1px solid rgb(100 116 139)" }}
           type="submit"
           onClick={() => {
             progressRef.current.classList.toggle("hidden");
