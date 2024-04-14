@@ -21,40 +21,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const query = `
-{
-  publication(host: "devaman.hashnode.dev") {
-    title
-    posts(first: 10) {
-      edges {
-        node {
-          id
-          title
-          url
-          author {
-            name
-          }
-          coverImage {
-            url
-          }
-          
-          views
-          readTimeInMinutes
-        }
-      }
-      
-    }
-  }
-}
-`;
-client
-  .query({
-    query: gql`
-      ${query}
-    `,
-  })
-  .then((res) => console.log(res));
-
 import Layout from "./Layout.jsx";
 import { About, Technologies, Blogs, Experience } from "./index.js";
 const router = createBrowserRouter(
