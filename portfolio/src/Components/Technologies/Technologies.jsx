@@ -9,15 +9,15 @@ import {
 
 const Technologies = () => {
   return (
-    <div className="px-8 ">
+    <div className="px-8 mb-14">
       {/* FRONTEND SKILLS */}
-      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl">
+      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl dark:border-slate-500">
         Frontend
       </button>
       <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap mb-10">
         {frontendSkills.map(({ img, toolName, toolSite, alias }) => (
           <div
-            className=" w-full h-max rounded-md mb-2 flex flex-col p-4 border-2 sm:flex-row sm:h-20 sm:w-max sm:px-4 sm:items-center lg:h-28 lg:px-6"
+            className=" w-full h-max rounded-md mb-2 flex flex-col p-4 border-2 sm:flex-row sm:h-20 sm:w-max sm:px-4 sm:items-center lg:h-28 lg:px-6  "
             key={toolName}>
             <img
               src={img}
@@ -30,7 +30,7 @@ const Technologies = () => {
               </p>
               <a
                 href={toolSite}
-                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg">
+                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg dark:hover:text-white">
                 {alias}
               </a>
             </div>
@@ -38,7 +38,7 @@ const Technologies = () => {
         ))}
       </div>
       {/* BACKEND SKILLS */}
-      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl">
+      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl dark:border-slate-500">
         Backend
       </button>
       <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap mb-10 ">
@@ -58,7 +58,7 @@ const Technologies = () => {
               </p>
               <a
                 href={toolSite}
-                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg">
+                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg dark:hover:text-white">
                 {alias}
               </a>
             </div>
@@ -66,7 +66,7 @@ const Technologies = () => {
         ))}
       </div>
       {/* Testing and Version Control Skills */}
-      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl">
+      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl dark:border-slate-500">
         Testing and version control
       </button>
       <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 mb-10">
@@ -85,7 +85,7 @@ const Technologies = () => {
               </p>
               <a
                 href={toolSite}
-                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg">
+                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg dark:hover:text-white">
                 {alias}
               </a>
             </div>
@@ -93,7 +93,7 @@ const Technologies = () => {
         ))}
       </div>
       {/* API STANDARDS */}
-      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl">
+      <button className="font-semibold text-sm transition-all mb-4 px-4 py-2 border-2 text-white bg-black rounded-md hover:invert lg:text-sm 2xl:text-xl dark:border-slate-500">
         Api Standards
       </button>
       <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
@@ -112,7 +112,7 @@ const Technologies = () => {
               </p>
               <a
                 href={toolSite}
-                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg">
+                className="text-slate-400 text-xs transition-all hover:text-black lg:text-sm 2xl:text-lg dark:hover:text-white">
                 {alias}
               </a>
             </div>

@@ -19,7 +19,7 @@ const Navigation = () => {
             className={({ isActive }) =>
               `transition-all ${
                 isActive || active
-                  ? "text-slate-950  border-b-4 border-b-gray-950 "
+                  ? "text-slate-950  border-b-4 border-b-gray-950 dark:text-white dark:border-b-white"
                   : " text-slate-400"
               }`
             }>
@@ -32,7 +32,7 @@ const Navigation = () => {
             className={({ isActive }) =>
               `transition-all ${
                 isActive
-                  ? "text-slate-950 border-b-4 border-b-gray-950"
+                  ? "text-slate-950 border-b-4 border-b-gray-950 dark:text-white dark:border-b-white"
                   : " text-slate-400"
               }`
             }
@@ -46,7 +46,7 @@ const Navigation = () => {
             className={({ isActive }) =>
               `transition-all ${
                 isActive
-                  ? "text-slate-950 border-b-4 border-b-gray-950"
+                  ? "text-slate-950 border-b-4 border-b-gray-950 dark:text-white dark:border-b-white"
                   : " text-slate-400"
               }`
             }
@@ -60,7 +60,7 @@ const Navigation = () => {
             className={({ isActive }) =>
               `transition-all ${
                 isActive
-                  ? "text-slate-950 border-b-4 border-b-gray-950"
+                  ? "text-slate-950 border-b-4 border-b-gray-950 dark:text-white dark:border-b-white"
                   : " text-slate-400"
               }`
             }

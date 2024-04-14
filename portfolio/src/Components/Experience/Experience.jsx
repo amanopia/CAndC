@@ -7,10 +7,10 @@ import "./Experience.css";
 
 const Experience = () => {
   return (
-    <div className="px-8">
+    <div className="px-8 mb-14">
       {/* COMPANY 1 */}
       <div className="flex flex-col items-stretch items-center">
-        <div className="flex flex-col justify-center container w-80 border-2 p-4 rounded-2xl mb-8 ml-0 lg:w-96 ">
+        <div className="flex flex-col justify-center container w-80 border-2 p-4 rounded-2xl mb-8 ml-0 lg:w-96 dark:border-slate-500">
           {/* CONTAINS LOGO AND WORK PROFILE */}
           <div className="flex gap-4 items-center">
             <img src={civ} alt="logo1" className="h-12 rounded-full lg:h-14" />
@@ -49,7 +49,7 @@ const Experience = () => {
       </div>
       {/* COMPANY 2 */}
       <div>
-        <div className="container w-80 border-2 p-4 rounded-2xl mt-10 mb-8 ml-0">
+        <div className="container w-80 border-2 p-4 rounded-2xl mt-10 mb-8 ml-0 dark:border-slate-500">
           {/* CONTAINS LOGO AND WORK PROFILE */}
           <div className="flex gap-4 items-center">
             <img
