@@ -48,7 +48,7 @@ const Header = () => {
               <p
                 className="text-sm my-2 font-light text-slate-400 md:text-xs
               lg:text-base 2xl:text-lg">
-                I am a Full Stack Developer based in Delhi
+                I am a Full Stack Developer based in Bhopal
               </p>
               <img
                 src={social}

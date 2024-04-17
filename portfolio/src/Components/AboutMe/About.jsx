@@ -2,6 +2,8 @@ import React from "react";
 
 import flag from "../../assets/InFlag.png";
 import hy from "../../assets/hy.gif";
+import yt from "../../assets/youtube.gif";
+import yt2 from "../../assets/icons8-youtube.gif";
 
 import "./About.css";
 
@@ -10,7 +12,7 @@ const About = () => {
     <div className="px-8 text-sm flex flex-col md:flex-row md:justify-between md:items-start xl:text-base 2xl:text-lg mb-14">
       {/* MY DESCRIPTION */}
       <div className="about-content md:w-96">
-        I am a Full Stack Developer based in Delhi, India. They say creativity
+        I am a Full Stack Developer based in Bhopal, India. They say creativity
         meets logic in the world of development, and that's where I thrive. As a
         Full Stack Developer, I'm fluent in the language of the MERN stack
         (Mongo, Express, React, Node.js), building applications from the backend
@@ -46,7 +48,7 @@ const About = () => {
               alt="flag"
               className="rounded-full object-cover h-6 w-6"
             />
-            Delhi, India
+            Bhopal, India
           </p>
         </div>
 
@@ -60,6 +62,20 @@ const About = () => {
             target="_blank"
             className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all  hover:text-slate-400 lg:text-base 2xl:text-lg ">
             Aman Verma <img src={hy} alt="" className={`h-4 dark:invert`} />
+          </a>
+        </div>
+
+        {/* YOUTUBE */}
+        <div>
+          <p className="text-slate-400 font-semibold text-xs lg:text-base">
+            YouTube
+          </p>
+          <a
+            href="https://www.youtube.com/@nemcode"
+            target="_blank"
+            className="font-semibold text-sm flex items-center gap-2 mt-1 transition-all hover:text-slate-400 lg:text-base 2xl:text-lg">
+            <img src={yt} alt="" className={`h-6 dark:invert`} />
+            @nemcode
           </a>
         </div>
 
