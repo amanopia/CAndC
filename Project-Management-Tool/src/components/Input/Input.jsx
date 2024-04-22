@@ -1,6 +1,6 @@
 import React from "react";
-
-const Input = ({ isTextArea, label, ...props }) => {
+import { forwardRef } from "react";
+const Input = forwardRef(({ isTextArea, label, ...props }, ref) => {
   const classes = "w-[80%] border-[3px] border-black rounded-xl p-4";
   return (
     <div className="flex flex-col gap-4 mb-10">
@@ -13,12 +13,12 @@ const Input = ({ isTextArea, label, ...props }) => {
         <h1 className="md:text-xl font-semibold">{label}</h1>
       </div>
       {isTextArea ? (
-        <textarea {...props} className={classes + " min-h-52"} />
+        <textarea ref={ref} {...props} className={classes + " min-h-52"} />
       ) : (
-        <input {...props} className={classes} />
+        <input ref={ref} {...props} className={classes} />
       )}
     </div>
   );
-};
+});
 
 export default Input;
