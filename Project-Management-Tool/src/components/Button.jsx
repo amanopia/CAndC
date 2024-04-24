@@ -10,7 +10,7 @@ const Button = ({ children, ...props }) => {
         <img src={book} alt="" />
         <p>{children}</p>
       </div>
-      <p>{props.projectsNum}</p>
+      <p>{props.projectsnum}</p>
     </button>
   );
 };

@@ -5,6 +5,7 @@ import { useState } from "react";
 import SideBar from "./components/SideBar/SideBar";
 import NewProjects from "./components/NewProjects/NewProjects";
 import NoProjects from "./components/NoProjects/NoProjects";
+import ShowProject from "./components/ShowProject/ShowProject";
 
 const App = () => {
   const [projectsState, setProjectsState] = useState({
@@ -12,6 +13,23 @@ const App = () => {
     projects: [],
   });
 
+  function deleteProject(id) {
+    setProjectsState((prev) => {
+      return {
+        ...prev,
+        selectedProjectId: null,
+        projects: prev.projects.filter((project) => project._id !== id),
+      };
+    });
+  }
+  function getProjectIdOnClick(id) {
+    setProjectsState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: id,
+      };
+    });
+  }
   function handleStartAddProject() {
     console.log(projectsState);
     setProjectsState((prevState) => {
@@ -23,10 +41,10 @@ const App = () => {
   }
   function handleAddProject(projectData) {
     setProjectsState((prevState) => {
-      const projectId = Math.random();
+      const projectId = prevState.projects.length + 1;
       const newProject = {
         ...projectData,
-        _id: projectId,
+        _id: prevState.projects.length + 1,
       };
       console.log(prevState);
       return {
@@ -37,7 +55,7 @@ const App = () => {
     });
   }
 
-  function handleSetUndefined() {
+  function handleonCancel() {
     setProjectsState((prev) => {
       return {
         ...prev,
@@ -50,11 +68,18 @@ const App = () => {
     content = (
       <NewProjects
         onHandleSaveProject={handleAddProject}
-        setUndefined={handleSetUndefined}></NewProjects>
+        onCancel={handleonCancel}></NewProjects>
     );
   } else if (projectsState.selectedProjectId === undefined) {
     content = (
       <NoProjects onAddHandleProject={handleStartAddProject}></NoProjects>
+    );
+  } else {
+    content = (
+      <ShowProject
+        projects={projectsState.projects}
+        id={projectsState.selectedProjectId}
+        onDeleteProject={deleteProject}></ShowProject>
     );
   }
 
@@ -63,7 +88,9 @@ const App = () => {
       <SideBar
         projects={projectsState.projects}
         onAddHandleProject={handleStartAddProject}
-        projectsNum={projectsState.projects.length}></SideBar>
+        projectsnum={projectsState.projects.length}
+        onClickGetProjectId={getProjectIdOnClick}
+        selectedProjectId={projectsState.selectedProjectId}></SideBar>
       {content}
     </div>
   );
