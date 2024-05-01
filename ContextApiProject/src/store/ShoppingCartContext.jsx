@@ -1,15 +1,86 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
+import { DUMMY_PRODUCTS } from "../dummy-products";
 
 // initial value that will be providede to all the other components
 
-const CartContext = createContext({
+export const CartContext = createContext({
   items: [],
+  addItemToCart: () => {},
+  onUpdateCartItemQuantity: () => {},
 });
 
-// provide this context to application and our componensts
-// wrap this context around parts of the tree that need it so that they can accept the values we  are providing here
+// This function is all about managing context data and providing the data to the application
+// This will be data related to the shopping cart
+export function CartContextProvider({ children }) {
+  const [shoppingCart, setShoppingCart] = useState({
+    items: [],
+  });
 
-export default CartContext;
+  function handleAddItemToCart(id) {
+    setShoppingCart((prevShoppingCart) => {
+      const updatedItems = [...prevShoppingCart.items];
 
-// The object that we pass has the values that we can access,
-// The object that createContext passees has functions that can be accessed on the consumer side.
+      const existingCartItemIndex = updatedItems.findIndex(
+        (cartItem) => cartItem.id === id
+      );
+      const existingCartItem = updatedItems[existingCartItemIndex];
+
+      if (existingCartItem) {
+        const updatedItem = {
+          ...existingCartItem,
+          quantity: existingCartItem.quantity + 1,
+        };
+        updatedItems[existingCartItemIndex] = updatedItem;
+      } else {
+        const product = DUMMY_PRODUCTS.find((product) => product.id === id);
+        updatedItems.push({
+          id: id,
+          name: product.title,
+          price: product.price,
+          quantity: 1,
+        });
+      }
+
+      return {
+        items: updatedItems,
+      };
+    });
+  }
+
+  function handleUpdateCartItemQuantity(productId, amount) {
+    setShoppingCart((prevShoppingCart) => {
+      const updatedItems = [...prevShoppingCart.items];
+      const updatedItemIndex = updatedItems.findIndex(
+        (item) => item.id === productId
+      );
+
+      const updatedItem = {
+        ...updatedItems[updatedItemIndex],
+      };
+
+      updatedItem.quantity += amount;
+
+      if (updatedItem.quantity <= 0) {
+        updatedItems.splice(updatedItemIndex, 1);
+      } else {
+        updatedItems[updatedItemIndex] = updatedItem;
+      }
+
+      return {
+        items: updatedItems,
+      };
+    });
+  }
+
+  const ctxValue = {
+    items: shoppingCart.items,
+    addItemToCart: handleAddItemToCart,
+    onUpdateCartItemQuantity: handleUpdateCartItemQuantity,
+  };
+
+  return (
+    <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>
+  );
+}
+
+// The CartContext.Provider should be wrapped around any value that the CartContextProvider custom component is wrapped around
