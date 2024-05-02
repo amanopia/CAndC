@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useReducer } from "react";
 import { DUMMY_PRODUCTS } from "../dummy-products";
 
 // initial value that will be providede to all the other components
@@ -11,7 +11,13 @@ export const CartContext = createContext({
 
 // This function is all about managing context data and providing the data to the application
 // This will be data related to the shopping cart
+function shoppingCartReducer(state, action) {
+  return state;
+}
 export function CartContextProvider({ children }) {
+  const [shoppingCartState, shoppingCartDispatch] =
+    useReducer(shoppingCartReducer);
+
   const [shoppingCart, setShoppingCart] = useState({
     items: [],
   });
